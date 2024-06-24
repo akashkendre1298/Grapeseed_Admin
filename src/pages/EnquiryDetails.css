@@ -1,0 +1,45 @@
+/* EnquiryDetails.css */
+
+.container {
+  --ion-background-color: #daa520;
+  padding: 20px;
+}
+
+.header {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 180px;
+  height: 150px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: black;
+}
+
+.lastItem {
+  margin-bottom: 50px;
+}
+
+.search-bar {
+  /* margin: 10px 0; */
+  padding-left: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.ion-label,
+p {
+  display: inline-block;
+  margin-right: 10px;
+  color: black;
+}
+
+p {
+  font-weight: bold;
+}

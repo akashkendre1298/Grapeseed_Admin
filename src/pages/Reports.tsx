@@ -13,9 +13,9 @@ import {
   IonImg,
 } from "@ionic/react";
 import logo from "../Assets/gapeseed-logo.png";
-import "./EnquiryDetails.css";
+import "./Reports.css";
 
-const EnquiryDetails = () => {
+const Reports = () => {
   const [expandedEnquiry, setExpandedEnquiry] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [enquiryData, setEnquiryData] = useState([]);
@@ -65,11 +65,12 @@ const EnquiryDetails = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonItem className="search-bar">
+              <IonItem>
                 <IonInput
-                  placeholder="Search by Customer or Executive Name"
+                  placeholder="Search by Customer "
                   value={searchQuery}
                   onIonChange={(e) => setSearchQuery(e.detail.value)}
+                  className="search-bar"
                 />
               </IonItem>
             </IonCol>
@@ -228,4 +229,4 @@ const EnquiryDetails = () => {
   );
 };
 
-export default EnquiryDetails;
+export default Reports;
