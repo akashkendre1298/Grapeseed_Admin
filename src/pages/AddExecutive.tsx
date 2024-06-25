@@ -70,52 +70,62 @@ const AddExecutive = () => {
           <IonImg src={logo} className="login-logo" />
           <IonText className="title">Add Executive</IonText>
         </div>
-        <IonItem>
-          <IonLabel position="floating">Full Name</IonLabel>
-          <IonInput
-            value={clientName}
-            onIonChange={(e) => setClientName(e.detail.value)}
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">Phone Number</IonLabel>
-          <IonInput
-            value={clientPhone}
-            onIonChange={(e) => setClientPhone(e.detail.value)}
-            type="tel"
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">Email</IonLabel>
-          <IonInput
-            value={clientEmail}
-            onIonChange={(e) => setClientEmail(e.detail.value)}
-            type="email"
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">Password</IonLabel>
-          <IonInput
-            value={clientPassword}
-            onIonChange={(e) => setClientPassword(e.detail.value)}
-            type="password"
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">PAN Card</IonLabel>
-          <IonInput
-            value={clientPanCard}
-            onIonChange={(e) => setClientPanCard(e.detail.value)}
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">Address</IonLabel>
-          <IonInput
-            value={clientAddress}
-            onIonChange={(e) => setClientAddress(e.detail.value)}
-          />
-        </IonItem>
-        <IonButton expand="full" color="dark" onClick={addExecutive}>
+        <section className="all-inputs-for-add-executive">
+          <IonItem style={{ border: "1px solid grey" }}>
+            <IonInput
+              placeholder="Full Name"
+              value={clientName}
+              onIonChange={(e) => setClientName(e.detail.value)}
+            ></IonInput>
+          </IonItem>
+          <IonItem style={{ border: "1px solid grey" }}>
+            <IonInput
+              value={clientPhone}
+              onIonChange={(e) => setClientPhone(e.detail.value)}
+              type="tel"
+              placeholder="Phone Number"
+            />
+          </IonItem>
+          <IonItem style={{ border: "1px solid grey" }}>
+            <IonInput
+              value={clientEmail}
+              onIonChange={(e) => setClientEmail(e.detail.value)}
+              type="email"
+              placeholder="Email"
+            />
+          </IonItem>
+          <IonItem style={{ border: "1px solid grey" }}>
+            {/* <IonLabel position="floating">Password</IonLabel> */}
+            <IonInput
+              value={clientPassword}
+              onIonChange={(e) => setClientPassword(e.detail.value)}
+              type="password"
+              placeholder="Password"
+            />
+          </IonItem>
+          <IonItem style={{ border: "1px solid grey" }}>
+            {/* <IonLabel position="floating">PAN Card</IonLabel> */}
+            <IonInput
+              value={clientPanCard}
+              onIonChange={(e) => setClientPanCard(e.detail.value)}
+              placeholder="PAN Card"
+            />
+          </IonItem>
+          <IonItem style={{ border: "1px solid grey" }}>
+            {/* <IonLabel position="floating">Address</IonLabel> */}
+            <IonInput
+              value={clientAddress}
+              onIonChange={(e) => setClientAddress(e.detail.value)}
+              placeholder="Address"
+            />
+          </IonItem>
+        </section>
+        <IonButton
+          expand="full"
+          color="dark"
+          onClick={addExecutive}
+          style={{ padding: "1em 0" }}
+        >
           Add Executive
         </IonButton>
         <IonToast

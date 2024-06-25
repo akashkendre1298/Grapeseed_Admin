@@ -25,7 +25,7 @@ import "./Dashboard.css";
 import logo from "../Assets/gapeseed-logo.png";
 
 const CustomCard = ({ title, subtitle, content, onClick }) => (
-  <IonCard button onClick={onClick}>
+  <IonCard button onClick={onClick} className="card-for-dashboard">
     <IonCardHeader>
       <IonCardTitle>{title}</IonCardTitle>
       {subtitle && <IonCardSubtitle>{subtitle}</IonCardSubtitle>}
@@ -48,20 +48,20 @@ const Dashboard = () => {
           <IonTitle>Dashboard</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <IonImg src={logo} className="login-logo" />
+      <IonContent className="ion-padding">
+        <IonImg src={logo} className="dashboard-logo" />
         <IonGrid>
           <IonRow>
             <IonCol>
               <CustomCard
                 title="Add Executive"
-                onClick={() => handleCardClick("/tab1")}
+                onClick={() => handleCardClick("/addexecutive")}
               />
             </IonCol>
             <IonCol>
               <CustomCard
                 title="View Executive"
-                onClick={() => handleCardClick("/tab2")}
+                onClick={() => handleCardClick("/viewexecutive")}
               />
             </IonCol>
           </IonRow>
@@ -69,7 +69,7 @@ const Dashboard = () => {
             <IonCol>
               <CustomCard
                 title="Enquiry Details"
-                onClick={() => handleCardClick("/tab3")}
+                onClick={() => handleCardClick("/enquirydetails")}
               />
             </IonCol>
             <IonCol>

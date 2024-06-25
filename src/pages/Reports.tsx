@@ -67,10 +67,11 @@ const Reports = () => {
             <IonCol>
               <IonItem>
                 <IonInput
-                  placeholder="Search by Customer "
+                  className="search-bar"
+                  placeholder="Search by Customer"
                   value={searchQuery}
                   onIonChange={(e) => setSearchQuery(e.detail.value)}
-                  className="search-bar"
+                  style={{ textAlign: "center" }}
                 />
               </IonItem>
             </IonCol>

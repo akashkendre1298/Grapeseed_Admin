@@ -1,8 +1,9 @@
 .dashboard-logo {
-  width: 100%;
+  width: 12em;
   height: 220px;
-  object-fit: contain;
-  margin: 20px 0;
+  /* object-fit: contain; */
+  /* margin: 20px 0; */
+  margin: auto;
 }
 
 .ion-page {
@@ -15,4 +16,16 @@ ion-footer {
 
 ion-label {
   color: white;
+}
+.card-for-dashboard {
+  background-color: white;
+  width: 11em;
+  height: 11em;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.login-logo {
+  display: flex;
+  justify-content: center;
 }

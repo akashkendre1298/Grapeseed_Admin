@@ -1,7 +1,7 @@
 /* EnquiryDetails.css */
 
 .container {
-  --ion-background-color: #daa520;
+  /* --ion-background-color: #daa520; */
   padding: 20px;
 }
 
@@ -42,4 +42,15 @@ p {
 
 p {
   font-weight: bold;
+}
+
+.enquiry-logo {
+  width: 12em;
+  height: 220px;
+  /* object-fit: contain; */
+  /* margin: 20px 0; */
+  margin: auto;
+}
+.dvbsfmvsvfvv {
+  border: 1px solid;
 }

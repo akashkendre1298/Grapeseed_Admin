@@ -59,7 +59,28 @@ const Login = () => {
             <IonCol size="12" sizeMd="6" sizeLg="4">
               <div className="login-container">
                 <IonImg src={logo} className="login-logo" />
-                <IonItem>
+
+                <div className="input-fields-for-setting">
+                  <p>Email:</p>
+                  <IonItem style={{ border: "1px solid grey" }}>
+                    <IonInput
+                      placeholder="Email"
+                      type="email"
+                      value={clientEmail}
+                      onIonChange={(e) => setClientEmail(e.detail.value)}
+                    ></IonInput>
+                  </IonItem>{" "}
+                  <p>Password:</p>
+                  <IonItem style={{ border: "1px solid grey" }}>
+                    <IonInput
+                      placeholder="Password"
+                      type="password"
+                      value={clientPassword}
+                      onIonChange={(e) => setClientPassword(e.detail.value)}
+                    ></IonInput>
+                  </IonItem>
+                </div>
+                {/* <IonItem>
                   <IonLabel position="floating">Email</IonLabel>
                   <IonInput
                     type="email"
@@ -74,11 +95,12 @@ const Login = () => {
                     value={clientPassword}
                     onIonChange={(e) => setClientPassword(e.detail.value)}
                   />
-                </IonItem>
+                </IonItem> */}
                 <IonButton
                   expand="block"
                   onClick={handleLogin}
                   disabled={isLoading}
+                  style={{ padding: "1em 0" }}
                 >
                   {isLoading ? (
                     <IonIcon slot="start" icon={checkmarkOutline} />

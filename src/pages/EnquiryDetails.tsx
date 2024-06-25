@@ -65,11 +65,13 @@ const EnquiryDetails = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonItem className="search-bar">
+              <IonItem>
                 <IonInput
+                  className="search-bar"
                   placeholder="Search by Customer or Executive Name"
                   value={searchQuery}
                   onIonChange={(e) => setSearchQuery(e.detail.value)}
+                  style={{ textAlign: "center" }}
                 />
               </IonItem>
             </IonCol>

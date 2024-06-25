@@ -1,5 +1,13 @@
 /* ExecutiveForm.css */
+.input-placeholder-padding::placeholder {
+  padding: 1em;
+}
 
+.all-inputs-for-add-executive {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 .ion-padding {
   background-color: #daa520;
   padding: 20px;

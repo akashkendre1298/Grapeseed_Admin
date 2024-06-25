@@ -2,12 +2,12 @@
   --ion-background-color: #daa520;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
 }
 
 .login-logo {
-  width: 150px;
-  height: 150px;
+  width: 12em;
+  height: 220px;
   margin-bottom: 20px;
   object-fit: contain;
+  margin: auto;
 }
