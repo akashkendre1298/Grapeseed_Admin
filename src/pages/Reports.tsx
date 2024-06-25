@@ -60,7 +60,7 @@ const Reports = () => {
           <IonRow className="header">
             <IonCol>
               <IonImg src={logo} className="login-logo" />
-              <h2 className="title">Enquiry Details</h2>
+              <h2 className="title">Reports</h2>
             </IonCol>
           </IonRow>
           <IonRow>
