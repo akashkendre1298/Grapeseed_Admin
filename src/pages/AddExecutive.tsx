@@ -65,60 +65,66 @@ const AddExecutive = () => {
 
   return (
     <IonPage>
-      <IonContent className="ion-padding" fullscreen>
+      <IonContent className="ion-padding " fullscreen>
         <div className="header">
           <IonImg src={logo} className="login-logo" />
           <IonText className="title">Add Executive</IonText>
         </div>
         <section className="all-inputs-for-add-executive">
-          <IonItem style={{ border: "1px solid grey" }}>
-            <IonInput
-              placeholder="Full Name"
-              value={clientName}
-              onIonChange={(e) => setClientName(e.detail.value)}
-            ></IonInput>
-          </IonItem>
-          <IonItem style={{ border: "1px solid grey" }}>
-            <IonInput
-              value={clientPhone}
-              onIonChange={(e) => setClientPhone(e.detail.value)}
-              type="tel"
-              placeholder="Phone Number"
-            />
-          </IonItem>
-          <IonItem style={{ border: "1px solid grey" }}>
-            <IonInput
-              value={clientEmail}
-              onIonChange={(e) => setClientEmail(e.detail.value)}
-              type="email"
-              placeholder="Email"
-            />
-          </IonItem>
-          <IonItem style={{ border: "1px solid grey" }}>
-            {/* <IonLabel position="floating">Password</IonLabel> */}
-            <IonInput
-              value={clientPassword}
-              onIonChange={(e) => setClientPassword(e.detail.value)}
-              type="password"
-              placeholder="Password"
-            />
-          </IonItem>
-          <IonItem style={{ border: "1px solid grey" }}>
-            {/* <IonLabel position="floating">PAN Card</IonLabel> */}
-            <IonInput
-              value={clientPanCard}
-              onIonChange={(e) => setClientPanCard(e.detail.value)}
-              placeholder="PAN Card"
-            />
-          </IonItem>
-          <IonItem style={{ border: "1px solid grey" }}>
-            {/* <IonLabel position="floating">Address</IonLabel> */}
-            <IonInput
-              value={clientAddress}
-              onIonChange={(e) => setClientAddress(e.detail.value)}
-              placeholder="Address"
-            />
-          </IonItem>
+          <IonInput
+            className="khdbshkdvchdb"
+            placeholder="Full Name"
+            value={clientName}
+            onIonChange={(e) => setClientName(e.detail.value)}
+            className="khdbshkdvchdb"
+            fill="outline"
+          ></IonInput>
+
+          <IonInput
+            value={clientPhone}
+            onIonChange={(e) => setClientPhone(e.detail.value)}
+            className="khdbshkdvchdb"
+            fill="outline"
+            type="tel"
+            placeholder="Phone Number"
+          />
+
+          <IonInput
+            value={clientEmail}
+            onIonChange={(e) => setClientEmail(e.detail.value)}
+            className="khdbshkdvchdb"
+            fill="outline"
+            type="email"
+            placeholder="Email"
+          />
+
+          {/* <IonLabel position="floating">Password</IonLabel> */}
+          <IonInput
+            value={clientPassword}
+            onIonChange={(e) => setClientPassword(e.detail.value)}
+            className="khdbshkdvchdb"
+            fill="outline"
+            type="password"
+            placeholder="Password"
+          />
+
+          {/* <IonLabel position="floating">PAN Card</IonLabel> */}
+          <IonInput
+            value={clientPanCard}
+            onIonChange={(e) => setClientPanCard(e.detail.value)}
+            className="khdbshkdvchdb"
+            fill="outline"
+            placeholder="PAN Card"
+          />
+
+          {/* <IonLabel position="floating">Address</IonLabel> */}
+          <IonInput
+            value={clientAddress}
+            onIonChange={(e) => setClientAddress(e.detail.value)}
+            className="khdbshkdvchdb"
+            fill="outline"
+            placeholder="Address"
+          />
         </section>
         <IonButton
           expand="full"

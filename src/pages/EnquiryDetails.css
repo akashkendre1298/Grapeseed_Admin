@@ -54,3 +54,13 @@ p {
 .dvbsfmvsvfvv {
   border: 1px solid;
 }
+.enquirydetails {
+  margin-top: 20px;
+  border-width: 1px;
+  border-color: black;
+  /* padding: 10px; */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: black;
+  background-color: white;
+}

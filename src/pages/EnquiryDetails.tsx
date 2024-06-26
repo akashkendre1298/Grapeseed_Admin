@@ -11,6 +11,9 @@ import {
   IonRow,
   IonCol,
   IonImg,
+  IonCard,
+  IonCardContent,
+  IonText,
 } from "@ionic/react";
 import logo from "../Assets/gapeseed-logo.png";
 import "./EnquiryDetails.css";
@@ -55,7 +58,7 @@ const EnquiryDetails = () => {
 
   return (
     <IonPage>
-      <IonContent className="container">
+      <IonContent className="container ion-padding">
         <IonGrid>
           <IonRow className="header">
             <IonCol>
@@ -65,156 +68,235 @@ const EnquiryDetails = () => {
           </IonRow>
           <IonRow>
             <IonCol>
-              <IonItem>
-                <IonInput
-                  className="search-bar"
-                  placeholder="Search by Customer or Executive Name"
-                  value={searchQuery}
-                  onIonChange={(e) => setSearchQuery(e.detail.value)}
-                  style={{ textAlign: "center" }}
-                />
-              </IonItem>
+              {/* <IonItem> */}
+              <IonInput
+                fill="outline"
+                className="search-bar"
+                placeholder="Search by Customer or Executive Name"
+                value={searchQuery}
+                onIonChange={(e) => setSearchQuery(e.detail.value)}
+                style={{ textAlign: "center" }}
+              />
+              {/* </IonItem> */}
             </IonCol>
           </IonRow>
-          <IonList>
+          {/* <IonList>
             {filterEnquiries().map((enquiry, index) => (
               <IonItem
                 key={index}
+                style={{ margin: "1em 0" }}
                 className={index === lastIndex ? "lastItem" : ""}
               >
-                <IonGrid>
+                <IonGrid
+                  style={{ backgroundColor: "white", borderRadius: "3px" }}
+                >
                   <IonRow>
-                    <IonCol>
-                      <IonLabel>Customer Name:</IonLabel>
-                      <p>{enquiry.name}</p>
+                    <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                      <IonLabel className="label">Customer Name:</IonLabel>
+                      <section
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
+                        <p>{enquiry.name}</p>
+                        <IonButton onClick={() => toggleDetails(index)}>
+                          {expandedEnquiry === index
+                            ? "View Less"
+                            : "View More"}
+                        </IonButton>
+                      </section>
                     </IonCol>
                   </IonRow>
                   <IonRow>
-                    <IonCol>
-                      <IonButton onClick={() => toggleDetails(index)}>
-                        {expandedEnquiry === index ? "View Less" : "View More"}
-                      </IonButton>
-                    </IonCol>
+                    <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}></IonCol>
                   </IonRow>
                   {expandedEnquiry === index && (
                     <>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Pan Card:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Pan Card:</IonLabel>
                           <p>{enquiry.Pan_Card}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Adhar Card:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Adhar Card:</IonLabel>
                           <p>{enquiry.Adhar_Card}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Cancelled Cheque:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Cancelled Cheque:</IonLabel>
                           <p>{enquiry.Cancelled_cheque}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Image:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Image:</IonLabel>
                           <p>{enquiry.uploaded_image}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Contact:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Contact:</IonLabel>
                           <p>{enquiry.mobile_nu}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Alternative Mobile:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Alternative Mobile:</IonLabel>
                           <p>{enquiry.Alternative_Mobile}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Mother Name:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Mother Name:</IonLabel>
                           <p>{enquiry.Mother_Name}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Email:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Email:</IonLabel>
                           <p>{enquiry.Email}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Last Education:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Last Education:</IonLabel>
                           <p>{enquiry.Last_Education}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Married Status:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Married Status:</IonLabel>
                           <p>{enquiry.Married_Status}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Nominee Name:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Nominee Name:</IonLabel>
                           <p>{enquiry.Nominee_Name}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Nominee DOB:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Nominee DOB:</IonLabel>
                           <p>{enquiry.Nominee_DOB}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Nominee Relationship:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Nominee Relationship:</IonLabel>
                           <p>{enquiry.Nominee_Ralationship}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Company Name:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Company Name:</IonLabel>
                           <p>{enquiry.Company_Name}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Annual Income:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Annual Income:</IonLabel>
                           <p>{enquiry.Annual_Income}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Industry Name:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Industry Name:</IonLabel>
                           <p>{enquiry.Industry_Name}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Height:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Height:</IonLabel>
                           <p>{enquiry.Height}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Weight:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Weight:</IonLabel>
                           <p>{enquiry.Weight}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Life Cover:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Life Cover:</IonLabel>
                           <p>{enquiry.Life_Cover}</p>
                         </IonCol>
                       </IonRow>
                       <IonRow>
-                        <IonCol>
-                          <IonLabel>Medical History:</IonLabel>
+                        <IonCol  style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}>
+                          <IonLabel className="label">Medical History:</IonLabel>
                           <p>{enquiry.medical_History}</p>
                         </IonCol>
                       </IonRow>
@@ -223,7 +305,272 @@ const EnquiryDetails = () => {
                 </IonGrid>
               </IonItem>
             ))}
-          </IonList>
+          </IonList> */}
+
+          {filterEnquiries().map((enquiry, index) => (
+            <IonCard
+              key={index}
+              style={{ margin: "1em 0" }}
+              className={`enquirydetails ${
+                index === lastIndex ? "lastItem" : ""
+              }`}
+            >
+              <IonCardContent>
+                <IonRow>
+                  <IonCol>
+                    <IonLabel
+                      style={{
+                        color: "black",
+                      }}
+                    >
+                      Customer Name:
+                    </IonLabel>
+                    <section
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <p style={{ fontSize: "1.1rem" }}>{enquiry.name}</p>
+                      <IonButton onClick={() => toggleDetails(index)}>
+                        {expandedEnquiry === index ? "View Less" : "View More"}
+                      </IonButton>
+                    </section>
+                  </IonCol>
+                </IonRow>
+
+                {expandedEnquiry === index && (
+                  <>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Pan Card:</IonLabel>
+                        <IonText className="value">{enquiry.Pan_Card}</IonText>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Adhar Card:</IonLabel>
+                        <p>{enquiry.Adhar_Card}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Cancelled Cheque:</IonLabel>
+                        <p>{enquiry.Cancelled_cheque}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Image:</IonLabel>
+                        <p>{enquiry.uploaded_image}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Contact:</IonLabel>
+                        <p>{enquiry.mobile_nu}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">
+                          Alternative Mobile:
+                        </IonLabel>
+                        <p>{enquiry.Alternative_Mobile}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Mother Name:</IonLabel>
+                        <p>{enquiry.Mother_Name}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Email:</IonLabel>
+                        <p>{enquiry.Email}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Last Education:</IonLabel>
+                        <p>{enquiry.Last_Education}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Married Status:</IonLabel>
+                        <p>{enquiry.Married_Status}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Nominee Name:</IonLabel>
+                        <p>{enquiry.Nominee_Name}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Nominee DOB:</IonLabel>
+                        <p>{enquiry.Nominee_DOB}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">
+                          Nominee Relationship:
+                        </IonLabel>
+                        <p>{enquiry.Nominee_Ralationship}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Company Name:</IonLabel>
+                        <p>{enquiry.Company_Name}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Annual Income:</IonLabel>
+                        <p>{enquiry.Annual_Income}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Industry Name:</IonLabel>
+                        <p>{enquiry.Industry_Name}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Height:</IonLabel>
+                        <p>{enquiry.Height}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Weight:</IonLabel>
+                        <p>{enquiry.Weight}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Life Cover:</IonLabel>
+                        <p>{enquiry.Life_Cover}</p>
+                      </IonCol>
+                    </IonRow>
+                    <IonRow>
+                      <IonCol
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <IonLabel className="label">Medical History:</IonLabel>
+                        <p>{enquiry.medical_History}</p>
+                      </IonCol>
+                    </IonRow>
+                  </>
+                )}
+              </IonCardContent>
+            </IonCard>
+          ))}
         </IonGrid>
       </IonContent>
     </IonPage>

@@ -79,23 +79,39 @@ const Reports = () => {
           <IonList>
             {filterEnquiries().map((enquiry, index) => (
               <IonItem
+                style={{ margin: "1em 0" }}
                 key={index}
                 className={index === lastIndex ? "lastItem" : ""}
               >
-                <IonGrid>
+                <IonGrid
+                  style={{ backgroundColor: "white", borderRadius: "3px" }}
+                >
                   <IonRow>
                     <IonCol>
                       <IonLabel>Customer Name:</IonLabel>
-                      <p>{enquiry.name}</p>
+                      <section
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
+                        <p>{enquiry.name}</p>
+                        <IonButton onClick={() => toggleDetails(index)}>
+                          {expandedEnquiry === index
+                            ? "View Less"
+                            : "View More"}
+                        </IonButton>
+                      </section>
                     </IonCol>
                   </IonRow>
-                  <IonRow>
+                  {/* <IonRow>
                     <IonCol>
                       <IonButton onClick={() => toggleDetails(index)}>
                         {expandedEnquiry === index ? "View Less" : "View More"}
                       </IonButton>
                     </IonCol>
-                  </IonRow>
+                  </IonRow> */}
                   {expandedEnquiry === index && (
                     <>
                       <IonRow>

@@ -2,9 +2,9 @@
   background-color: #daa520;
   padding: 20px;
 }
-.main-page-bg{
-   background-color: #daa520;
-   height: auto;
+.main-page-bg {
+  background-color: #daa520;
+  height: auto;
 }
 .header {
   text-align: center;
@@ -78,7 +78,7 @@
   margin-left: 5px;
   margin-top: 2px;
 }
- 
+
 .lastItemMargin {
   margin-bottom: 50px; /* Add the desired bottom margin for the last item */
 }
